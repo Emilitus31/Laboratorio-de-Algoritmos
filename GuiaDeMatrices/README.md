@@ -1,1 +1,1 @@
-
+Trabajo individual
