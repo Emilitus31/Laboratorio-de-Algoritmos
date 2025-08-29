@@ -148,7 +148,7 @@ while True:
             if not inventario:
                 print("No hay productos registrados.")
             else:
-                buscar_pro = input("Escribe el nombre del producto al que quieras registrar compra: ")
+                buscar_pro = input("Escribe el nombre del producto al que quieras borrar del inventario: ")
                 
                 for producto in inventario:
                     if producto['producto'] == buscar_pro:
@@ -165,3 +165,4 @@ while True:
         case _:
 
             print("Opción no válida. Intenta otra vez.")
+
