@@ -133,7 +133,7 @@ while True:
                         print(f"   Stock: {producto['stock']}")
                         print("-------------------------")
                         nueva_compra = int(input("Cuanto stock quieres registrar como comprado "))
-                        if nuevo_compra <= 0:
+                        if nueva_compra <= 0:
                             print("Datos inválidos. Intenta de nuevo.")
                         else:
                             if nueva_compra > producto['stock']:
@@ -174,5 +174,6 @@ while True:
         case _:
 
             print("Opción no válida. Intenta otra vez.")
+
 
 
