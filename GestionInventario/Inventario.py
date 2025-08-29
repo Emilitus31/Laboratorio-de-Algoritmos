@@ -81,7 +81,7 @@ while True:
                         print(f"   Precio: ${producto['precio']}")
                         print(f"   Stock: {producto['stock']}")
                         print("-------------------------")
-                        nuevo_precio = int(input("Cual es el nuevo precio? "))
+                        nuevo_precio = float(input("Cual es el nuevo precio? "))
                         producto['precio'] = nuevo_precio
                         print("Nuevo precio: ")
                         print(f"   Precio: {producto['precio']}")
@@ -163,4 +163,5 @@ while True:
             break
 
         case _:
+
             print("Opción no válida. Intenta otra vez.")
