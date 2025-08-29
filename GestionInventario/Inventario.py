@@ -82,9 +82,12 @@ while True:
                         print(f"   Stock: {producto['stock']}")
                         print("-------------------------")
                         nuevo_precio = float(input("Cual es el nuevo precio? "))
-                        producto['precio'] = nuevo_precio
-                        print("Nuevo precio: ")
-                        print(f"   Precio: {producto['precio']}")
+                        if nuevo_precio <= 0:
+                            print("Datos inválidos. Intenta de nuevo.")
+                        else:
+                            producto['precio'] = nuevo_precio
+                            print("Nuevo precio: ")
+                            print(f"   Precio: {producto['precio']}")
                         encontrado = True
                         
                 if encontrado == False:
@@ -105,9 +108,12 @@ while True:
                         print(f"   Stock: {producto['stock']}")
                         print("-------------------------")
                         nuevo_stock = int(input("Cuanto stock deséas agregar "))
-                        producto['stock'] = producto['stock'] + nuevo_stock
-                        print("Nuevo stock: ")
-                        print(f"   Stock: {producto['stock']}")
+                        if nuevo_stock <= 0:
+                            print("Datos inválidos. Intenta de nuevo.")
+                        else:
+                            producto['stock'] = producto['stock'] + nuevo_stock
+                            print("Nuevo stock: ")
+                            print(f"   Stock: {producto['stock']}")
                         encontrado = True
                         
                 if encontrado == False:
@@ -127,18 +133,21 @@ while True:
                         print(f"   Stock: {producto['stock']}")
                         print("-------------------------")
                         nueva_compra = int(input("Cuanto stock quieres registrar como comprado "))
-                        if nueva_compra > producto['stock']:
-                            print("no tienes suficiente stock para realizar esa venta")
-                            
+                        if nuevo_compra <= 0:
+                            print("Datos inválidos. Intenta de nuevo.")
                         else:
-                            producto['stock'] = producto['stock'] - nueva_compra
-                            if producto['stock'] == 0:
-                                print(f"Te has quedado sin stock de {producto['producto']}")
-                                inventario.remove(producto)
-                                
+                            if nueva_compra > producto['stock']:
+                                print("no tienes suficiente stock para realizar esa venta")
+                            
                             else:
-                                print("Nuevo stock: ")
-                                print(f"   Stock: {producto['stock']}")
+                                producto['stock'] = producto['stock'] - nueva_compra
+                                if producto['stock'] == 0:
+                                    print(f"Te has quedado sin stock de {producto['producto']}")
+                                    inventario.remove(producto)
+                                
+                                else:
+                                    print("Nuevo stock: ")
+                                    print(f"   Stock: {producto['stock']}")
                         encontrado = True
                         
                 if encontrado == False:
@@ -165,4 +174,5 @@ while True:
         case _:
 
             print("Opción no válida. Intenta otra vez.")
+
 
