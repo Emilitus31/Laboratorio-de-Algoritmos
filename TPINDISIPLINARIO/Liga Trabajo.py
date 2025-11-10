@@ -27,3 +27,38 @@ ff['Goleadores'] = ff['Goleadores'].fillna('No hubo gol')
 
 print(ff.head(10))
 
+#10 equipos con mas goles a favor
+
+OrdenPorgoles = df.sort_values(by='GF', ascending=False)
+
+print(OrdenPorgoles.head(10))
+
+#"grafico"
+
+#10 equipos con mas goles en contra
+
+OrdenPorgolesC = df.sort_values(by='GC', ascending=False)
+
+print(OrdenPorgolesC.head(10))
+
+#"grafico"
+
+#Mas partidos ganados
+
+OrdenPorgolesC = df.sort_values(by='Ganados', ascending=False)
+
+print(OrdenPorgolesC.head(10))
+
+#"Grafico"
+
+media = df['Puntos'].mean()
+mediana = df['Puntos'].median()
+desviacion_std = df['Puntos'].std()
+minimo = df['Puntos'].min()
+maximo = df['Puntos'].max()
+
+print(f"Media de puntos (Promedio): {media:.2f}")
+print(f"Mediana: {mediana}")
+print(f"Desviación Estándar (Std): {desviacion_std:.2f}")
+print(f"Puntaje Mínimo (Min): {minimo}")
+print(f"Puntaje Máximo (Max): {maximo}")
